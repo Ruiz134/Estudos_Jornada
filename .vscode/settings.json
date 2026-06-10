@@ -2,3 +2,23 @@
     "python-envs.defaultEnvManager": "ms-python.python:poetry",
     "python-envs.defaultPackageManager": "ms-python.python:poetry"
 }
+// Essas duas linhas são configurações (geralmente inseridas em uma pasta ".vscode" e no arquivo settings.json). 
+// Elas servem para avisar ao editor que você está usando o Poetry como a ferramenta principal para 
+// gerenciar os ambientes virtuais e as dependências do seu projeto Python.
+// Dessa forma, o VS Code automatiza processos para você, em vez de tentar adivinhar qual 
+// ferramenta você está usando (como venv, pipenv ou conda).
+// O que cada linha faz especificamente?
+// "python-envs.defaultEnvManager": "ms-python.python:poetry"
+// Diz a IDE que o Poetry é o gerenciador de ambientes padrão. Quando você abrir um projeto, 
+// a IDE saberá exatamente onde procurar o ambiente virtual criado pelo Poetry para 
+// ativar o interpretador correto.
+// "python-envs.defaultPackageManager": "ms-python.python:poetry"
+// Define o Poetry como o gerenciador de pacotes padrão. Isso significa que, se a IDE precisar 
+// instalar alguma ferramenta de suporte (como um formatador de código tipo o Black, ou um linter como o Ruff), 
+// ele usará o comando poetry add em vez do tradicional pip install.
+// Na prática, qual é a vantagem disso?
+// 🚀 Produtividade: Você não precisa ficar selecionando manualmente o interpretador 
+// Python (Ctrl + Shift + P > Python: Select Interpreter) toda vez que reabrir o projeto. 
+// A IDE detecta o ambiente do Poetry e se conecta a ele automaticamente.
+// Se você já usa o Poetry no seu fluxo de trabalho, manter essas configurações na sua IDE é uma 
+// excelente ideia para deixar o desenvolvimento mais fluido!
