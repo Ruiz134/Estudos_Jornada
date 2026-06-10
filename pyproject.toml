@@ -3,16 +3,14 @@ name = "estudos-python"
 version = "0.1.0"
 description = ""
 authors = [
-    {name = "Your Name",email = "you@example.com"}
+    {name = "Alan Ruiz",email = "alanruiz.eng@gmail.com"}
 ]
 readme = "README.md"
 requires-python = ">=3.14"
 dependencies = [
-    "pandas (>=3.0.2,<4.0.0)"
+    "pandas (>=3.0.2,<4.0.0)",
+    "pyarrow (>=24.0.0,<25.0.0)"
 ]
-
-[tool.poetry]
-packages = [{include = "estudos_python", from = "src"}]
 
 [build-system]
 requires = ["poetry-core>=2.0.0,<3.0.0"]
@@ -22,3 +20,11 @@ build-backend = "poetry.core.masonry.api"
 dev = [
     "ipykernel (>=7.2.0,<8.0.0)"
 ]
+
+[tool.pyrefly]
+search_path = [
+    "Espaço_Estudos/Trilha_Python/Módulo_2/Funções_Estruturas_de_Dados/Desafio_Aula"
+]
+
+[tool.poetry]
+package-mode = false

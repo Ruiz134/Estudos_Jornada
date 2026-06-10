@@ -36,7 +36,7 @@ def calcular_total_vendas(df_extraido: pd.DataFrame) -> pd.DataFrame:
 
 
 # uma funcao que da load em csv ou parquet
-def carregar_dados_em_csv_ou_parquet(format_saida: int, df_saida: pd.DataFrame) -> None:
+def carregar_dados_em_csv_ou_parquet(format_saida: int, df_saida: pd.DataFrame, output: str) -> None:
     '''
     Carrega os dados em um arquivo CSV ou Parquet.
 
@@ -48,10 +48,10 @@ def carregar_dados_em_csv_ou_parquet(format_saida: int, df_saida: pd.DataFrame) 
         None
     '''
     if format_saida == 1:
-        df_saida.to_csv("data.csv", index=False)
+        df_saida.to_csv(os.path.join(output, "data.csv"), index=False)
         print("Arquivo CSV gerado com sucesso!")
     elif format_saida == 2:
-        df_saida.to_parquet("data.parquet", engine="pyarrow", index=False)
+        df_saida.to_parquet(os.path.join(output, "data.parquet"), engine="pyarrow", index=False)
         print("Arquivo Parquet gerado com sucesso!")
     else:
         print("Formato inválido! Escolha entre CSV (1) ou Parquet (2)")
@@ -71,7 +71,7 @@ def pipeline_gerar_calculo_vendas(pasta_de_dados: str, formato_de_saida: int = 1
     '''
     extração_df = extrair_dados_e_consolidar(pasta_de_dados)
     transformação_df = calcular_total_vendas(extração_df)
-    carregar_dados_em_csv_ou_parquet(formato_de_saida, df_saida=transformação_df)
+    carregar_dados_em_csv_ou_parquet(formato_de_saida, df_saida=transformação_df, output=pasta_de_dados)
     return None
 
     
