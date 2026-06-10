@@ -6,10 +6,11 @@ authors = [
     {name = "Alan Ruiz",email = "alanruiz.eng@gmail.com"}
 ]
 readme = "README.md"
-requires-python = ">=3.14"
+requires-python = ">=3.14, <4.0"
 dependencies = [
     "pandas (>=3.0.2,<4.0.0)",
-    "pyarrow (>=24.0.0,<25.0.0)"
+    "pyarrow (>=24.0.0,<25.0.0)",
+    "loguru (>=0.7.3,<0.8.0)"
 ]
 
 [build-system]
@@ -23,7 +24,8 @@ dev = [
 
 [tool.pyrefly]
 search_path = [
-    "Espaço_Estudos/Trilha_Python/Módulo_2/Funções_Estruturas_de_Dados/Desafio_Aula"
+    "Espaço_Estudos/Trilha_Python/Módulo_2/Funções_Estruturas_de_Dados/Desafio_Aula",
+    "Espaço_Estudos/Trilha_Python/Módulo_2/Funções_Estruturas_de_Dados/Log_nos_Dados/Decoradores"
 ]
 
 [tool.poetry]
